@@ -1,0 +1,46 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  flex: 0;
+  border-bottom: solid 1px var(--adm-color-border);
+  background-color:  #f0eded;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color:  #f0eded;
+}
+
+.bottom {
+  flex: 0;
+  border-top: solid 1px var(--adm-color-border);
+}
+
+.label-size{
+  font-size: 60px;
+}
+
+.div-footer{
+  height: 50px;
+  width: 100%;
+  background-color: rgb(241, 248, 248);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center
+}
+
+.githouse-styles{
+  color: rgb(175, 192, 204);
+  font-size: 30px;
+  font-weight: 900;
+  margin: 10px;
+}
+

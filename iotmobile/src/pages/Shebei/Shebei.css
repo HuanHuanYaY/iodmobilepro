@@ -1,0 +1,82 @@
+
+
+.grid-demo-item-blockA-shebei{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+
+}
+
+.grid-demo-item-blockB-shebei{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.grid-demo-item-blockC-shebei{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.grid-demo-item-blockD-shebei{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.grid-demo-item-blockE-shebei{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.div-big-cover-shebei{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: solid 1px #ede6e6;
+    background-color: rgb(241, 248, 248);
+    text-align: center;
+    width: 370px;
+    height: 240px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.div-big-cover-shebei > div{
+    flex: 1 1 150px;
+    background-color: #fcfcfc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}

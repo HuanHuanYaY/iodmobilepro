@@ -1,0 +1,184 @@
+
+
+.grid-demo-item-blockA-home{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+
+}
+
+.grid-demo-item-blockB-home{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.grid-demo-item-blockC-home{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.grid-demo-item-blockD-home{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.grid-demo-item-blockE-home{
+    border: solid 1px #999999;
+    background: var(--adm-color-box);
+    text-align: center;
+    color: #999999;
+    height: 80px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.div-big-cover-home{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: solid 1px #ede6e6;
+    background-color: rgb(241, 248, 248);
+    text-align: center;
+    width: 370px;
+    height: 110px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.div-big-cover-home2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: solid 1px #ede6e6;
+    background-color: rgb(243, 250, 250);
+    width: 370px;
+    height: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+
+.div-big-cover-home > div{
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.div-color-1{
+    background-color: #9ee7ce;
+}
+
+.div-color-2{
+    background-color: #8bdaf1;
+}
+
+.div-color-3{
+    background-color: #e5e7c0;
+}
+
+
+.FaceRecognitionOutline-styles{
+    color: rgb(9, 170, 117);
+    font-size: 60px;
+    font-weight: 900;
+    float: left;
+    margin-right: 150px;
+}
+
+.FaceRecognitionOutline-styles2{
+    color: rgb(10, 95, 151);
+    font-size: 60px;
+    font-weight: 900;
+    float: left;
+    margin-right: 150px;
+}
+
+.FaceRecognitionOutline-styles3{
+    color: rgb(250, 170, 50);
+    font-size: 60px;
+    font-weight: 900;
+    float: left;
+    margin-right: 150px;
+}
+
+
+.Co2-font-styles-2{
+    color: #333;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Times New Roman';
+    font-style: oblique;
+    letter-spacing: 2px;
+}
+
+.Co2-font-styles-3{
+    color: #333;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Times New Roman';
+    font-style: oblique;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-styles{
+    background-color: rgb(243, 250, 250);
+    border: none;
+    color: black;
+    font-size: 10px;
+    width: 40px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.div-big-cover-home-little{
+    display: flex;
+    justify-content: center;
+    color: #999999;
+    width: 370px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.calendar-styles{
+    color: rgb(5, 5, 5);
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 10px;
+}
