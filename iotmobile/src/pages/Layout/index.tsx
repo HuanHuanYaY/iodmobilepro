@@ -69,10 +69,7 @@ export const MyHome = () => {
     <Router initialEntries={['/home']}>
       <div className="app">
         <div className="top">
-          <div className='div-footer'>
-          <GiHouse className='githouse-styles'/>
-          <text style={{fontSize:"20px"}}>Smart Room</text>
-          </div>
+
         </div>
         <div className="body">
           <Routes>
