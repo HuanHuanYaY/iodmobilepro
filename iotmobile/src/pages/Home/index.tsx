@@ -14,7 +14,7 @@ import {
     SmileOutline,
     FrownOutline
 } from 'antd-mobile-icons'
-import { MdOutlineWaterDrop,MdCo2 } from "react-icons/md"
+import { MdOutlineWaterDrop, MdCo2 } from "react-icons/md"
 import { IoMdCalendar } from "react-icons/io"
 import { Line } from '@ant-design/charts'
 import qs from 'qs'
@@ -25,6 +25,8 @@ import { allCo2Data } from '../api/co2'
 import { create } from 'domain'
 import { isVisible } from '@testing-library/user-event/dist/utils'
 import { show } from 'antd-mobile/es/components/dialog/show'
+import { Occupy } from '../api/occupy'
+import { AiOutlineFrown } from "react-icons/ai";
 
 
 
@@ -39,6 +41,22 @@ export const Home = () => {
     const [visible, setVisible] = useState(false)
     const [date, setDate] = useState(moment().format('YYYY-MM-DD'));
     const now = new Date()
+    const [occupyData2, setOccupyData2] = useState(0)
+    const [occupyData3, setOccupyData3] = useState(0)
+    const [occupyData, setOccupyData] = useState(0)
+
+    const OccupyParm = {
+        device_id: 'CBO-010446',
+        create_time: date
+    }
+    const OccupyParm2 = {
+        device_id: 'CBO-010446JM',
+        create_time: date
+    }
+    const OccupyParm3 = {
+        device_id: 'CBO-010446GD',
+        create_time: date
+    }
 
     const reqData = {
         create_time: date
@@ -105,6 +123,60 @@ export const Home = () => {
         }
     }, [date])
 
+    //occupy数据获取
+    useEffect(() => {
+        const selectOccupy = async () => {
+            //   const res = await Occupy(qs.stringify(OccupyParm));
+            //   const formatterData = res.data.map((Item:any) => ({
+            //     ...Item,
+            //     create_time: moment.tz(Item.create_time, "Asia/Shanghai").format("HH:mm:ss")
+            //   }));
+            //   if (res?.data?.length > 0) {
+            //     let lengthOccupy = res.data.length;
+            //     const flag = res.data[lengthOccupy - 1].occupy;
+            //     setOccupyData(flag);
+            //   } else {
+            //     setOccupyData(0);
+            //   }
+            //   //console.log(occupyData)
+
+
+            //   const res2 = await Occupy(qs.stringify(OccupyParm2));
+            //   const formatterData2 = res2.data.map((Item:any) => ({
+            //     ...Item,
+            //     create_time: moment.tz(Item.create_time, "Asia/Shanghai").format("HH:mm:ss")
+            //   }));
+            //   if (res2?.data?.length > 0) {
+            //     let lengthOccupy2 = res2.data.length;
+            //     const flag2 = res2.data[lengthOccupy2 - 1].occupy;
+            //     setOccupyData2(flag2);
+            //   } else {
+            //     setOccupyData2(0);
+            //   }
+
+
+            const res3 = await Occupy(qs.stringify(OccupyParm3));
+            const formatterData3 = res3.data.map((Item: any) => ({
+                ...Item,
+                create_time: moment.tz(Item.create_time, "Asia/Shanghai").format("HH:mm:ss")
+            }));
+            if (res3?.data?.length > 0) {
+                let lengthOccupy3 = res3.data.length;
+                const flag3 = res3.data[lengthOccupy3 - 1].occupy;
+                setOccupyData3(flag3);
+            } else {
+                setOccupyData3(0);
+            }
+            //console.log(occupyData3);
+
+        };
+
+        const interval = setInterval(selectOccupy, 5000); // 每 5 秒执行一次 selectOccupy
+
+        return () => clearInterval(interval); // 组件卸载时清除定时器
+    }, [occupyData])
+
+
     return (
         <>
             <div className='div-big-cover-home'>
@@ -139,38 +211,49 @@ export const Home = () => {
 
                 <div className='div-color-3'>
                     <div>
-                        <SmileOutline className='FaceRecognitionOutline-styles3'></SmileOutline>
-
+                        <div>
+                            {occupyData3.toString() === '0' ? (
+                                <SmileOutline className='FaceRecognitionOutline-styles3'></SmileOutline>
+                            ) : (
+                                <AiOutlineFrown className='FaceRecognitionOutline-styles3'></AiOutlineFrown>
+                            )
+                            }
+                        </div>
                     </div>
                     <div style={{ marginBottom: "7px" }}>
                         <text className='Co2-font-styles-2'>Occupy</text>
                     </div>
                     <div>
-                        <text className='Co2-font-styles-2'>Free</text>
+                        {occupyData3.toString() === '0' ? (
+                            <text className='Co2-font-styles-2'>Free</text>
+                        ) : (
+                            <text className='Co2-font-styles-2'>Busy</text>
+                        )
+                        }
                     </div>
                 </div>
             </div>
             <div className='div-big-cover-home-little'>
                 <text className='Co2-font-styles-3'>PPM data line chart</text>
-                        <IoMdCalendar className='calendar-styles'  onClick={() => {
-                            setVisible(true)
-                        }} />
-                    <DatePicker
-                        title='Time select'
-                        visible={visible}
-                        onClose={() => {
-                            setVisible(false)
-                        }}
-                        max={now}
-                        onConfirm={val => {
-                            Toast.show(val.toDateString())
-                            const date = new Date(val)
-                            console.log(val)
-                            const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-                            console.log(formattedDate)
-                            setDate(formattedDate)
-                        }}
-                    />
+                <IoMdCalendar className='calendar-styles' onClick={() => {
+                    setVisible(true)
+                }} />
+                <DatePicker
+                    title='Time select'
+                    visible={visible}
+                    onClose={() => {
+                        setVisible(false)
+                    }}
+                    max={now}
+                    onConfirm={val => {
+                        Toast.show(val.toDateString())
+                        const date = new Date(val)
+                        console.log(val)
+                        const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+                        console.log(formattedDate)
+                        setDate(formattedDate)
+                    }}
+                />
 
             </div>
 
